@@ -18,3 +18,13 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
       - run: git branch
       - run: env
+  test-job-two:
+    name: Test Step
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
+      - run: ls -lah /home/runner/work/github-actions-workflow_run-event/github-actions-workflow_run-event
+
